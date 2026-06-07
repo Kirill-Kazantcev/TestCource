@@ -1,4 +1,4 @@
-## Тест-кейсы и тест-сьюты (Лабораторная работа №1)
+
 
 Проект: [«На страже Волшебной школы»](https://github.com/Kirill-Kazantcev/higher-web-practice-school)
 
@@ -137,19 +137,6 @@
 
 ---
 
-
-### Ссылки на код в репозитории
-
-Ниже приведены ссылки на файлы с тестами, подтверждающие статус каждого тест-кейса.
-
-| Статус | Файлы в репозитории | Строки/методы |
-|:-------|:--------------------|:--------------|
-| **Выполнено** | [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java)<br>[`ScenarioTests.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/integration/ScenarioTests.java)<br>[`EdgeCaseTests.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/EdgeCaseTests.java)<br>[`SchoolStateTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/service/state/SchoolStateTest.java)<br>`model/condition/*Test.java`<br>`model/permission/*Test.java`<br>`model/role/*Test.java` | Методы:<br>`testAuthenticationSuccess()`<br>`testAuthenticationFailure()`<br>`testRolePermissions()`<br>`testLocationAccess()`<br>`testJournalWatchEdit()`<br>`testConditions()`<br>`testHistoryLogging()`<br>`testMultipleUsersInLocation()` |
-| **Частично** | [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java#L120-L150)<br>[`ScenarioTests.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/integration/ScenarioTests.java#L80-L110) | Методы (неполное покрытие):<br>`testSwitchUser()` – нет проверки истории<br>`testParentJournalAccess()` – фильтрация работает, но нет теста на чужого ребёнка<br>`testLeaveLocation()` – нет проверки ошибок |
-| **Не выполнено** | Отсутствуют в существующем коде | Нет реализации:<br>`testPreserveStateAfterLogout()`<br>`testWhoCommand()`<br>`testEmptyInput()`<br>`testDoubleEnterLocation()`<br>`testParentChildBinding()` |
-
----
-
 ### Подробные ссылки на ключевые тесты
 
 #### Выполненные (примеры):
@@ -157,19 +144,32 @@
 1. **Аутентификация** – [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java)
    - Строки ~45-70: `testAuthenticationSuccess()`, `testAuthenticationFailure()`
 
-2. **Ролевая модель** – [`model/role/RoleTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/role/)
-   - Проверка разрешений для ADMIN, GUARD, STUDENT, TEACHER, CHIEF
+2. **Ролевая модель** – [`test/ru/yandex/practicum/model/role/`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/tree/main/test/ru/yandex/practicum/model/role)
+   - Например, [`AdminTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/role/AdminTest.java)
+   - [`GuardTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/role/GuardTest.java)
+   - [`StudentTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/role/StudentTest.java)
 
-3. **Условные разрешения** – [`model/condition/`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/tree/main/test/ru/yandex/practicum/model/condition)
-   - `DirectorAbsentConditionTest.java`
-   - `TeacherPresentConditionTest.java`
+3. **Условные разрешения** – [`test/ru/yandex/practicum/model/condition/`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/tree/main/test/ru/yandex/practicum/model/condition)
+   - [`DirectorAbsentConditionTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/condition/DirectorAbsentConditionTest.java)
+   - [`TeacherPresentConditionTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/condition/TeacherPresentConditionTest.java)
+   - [`OwnChildOnlyConditionTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/condition/OwnChildOnlyConditionTest.java)
 
-4. **Журнал оценок** – [`model/journal/SchoolJournalTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/journal/SchoolJournalTest.java)
+4. **Разрешения (Permissions)** – [`test/ru/yandex/practicum/model/permission/`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/tree/main/test/ru/yandex/practicum/model/permission)
+   - [`EnterSchoolTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/permission/EnterSchoolTest.java)
+   - [`WatchJournalTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/permission/WatchJournalTest.java)
 
-5. **История действий** – [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java#L200-L230)
+5. **Журнал оценок** – [`test/ru/yandex/practicum/model/journal/SchoolJournalTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/journal/SchoolJournalTest.java)
+
+6. **История действий** – [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java#L200-L230)
    - Метод `testHistoryLogging()`
 
-6. **Интеграционные сценарии** – [`ScenarioTests.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/integration/ScenarioTests.java)
+7. **Интеграционные сценарии** – [`ScenarioTests.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/integration/ScenarioTests.java)
+
+8. **Локации** – [`test/ru/yandex/practicum/model/location/`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/tree/main/test/ru/yandex/practicum/model/location)
+   - [`SchoolTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/location/SchoolTest.java)
+   - [`ClassroomTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/location/ClassroomTest.java)
+
+9. **Пользователи** – [`test/ru/yandex/practicum/model/user/UserTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/user/UserTest.java)
 
 #### Частично выполненные:
 
@@ -177,14 +177,19 @@
    - [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java#L100-L115) – метод `testSwitchUser()`
 
 2. **TC-22, TC-29, TC-46 (Родитель и журнал)** – фильтрация работает, но нет теста на чужого ребёнка
-   - [`model/journal/SchoolJournalTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/journal/SchoolJournalTest.java#L60-L80) – метод `testParentViewOnlyOwnChild()`
+   - [`test/ru/yandex/practicum/model/condition/OwnChildOnlyConditionTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/condition/OwnChildOnlyConditionTest.java)
+   - [`test/ru/yandex/practicum/model/journal/SchoolJournalTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/journal/SchoolJournalTest.java#L60-L80)
 
-#### Не выполненные:
+3. **TC-36 (Пользователь покидает локацию)** – тест есть, но без проверки ошибок
+   - [`test/ru/yandex/practicum/model/location/LocationTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/tree/main/test/ru/yandex/practicum/model/location)
+
+#### Не выполненные: 
 
 1. **TC-34** – [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java) – добавить метод `testStatePreservedAfterLogoutLogin()`
-2. **TC-37** – создать новый тест `testWhoCommand()` (команда не реализована в консоли)
+2. **TC-37** – создать новый тест `testWhoCommand()` в [`SecureStateImplTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/impl/SecureStateImplTest.java) (команда `who` не реализована в консоли)
 3. **TC-41** – [`EdgeCaseTests.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/EdgeCaseTests.java) – добавить `testEmptyInput()`
-4. **TC-43** – добавить `testPreventDoubleEnterLocation()`
-5. **TC-48** – [`model/user/UserTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/user/) – добавить `testParentChildBinding()`
+4. **TC-43** – добавить `testPreventDoubleEnterLocation()` в [`EdgeCaseTests.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/EdgeCaseTests.java)
+5. **TC-48** – [`test/ru/yandex/practicum/model/user/UserTest.java`](https://github.com/Kirill-Kazantcev/higher-web-practice-school/blob/main/test/ru/yandex/practicum/model/user/UserTest.java) – добавить `testParentChildBinding()`
 
 ---
+
