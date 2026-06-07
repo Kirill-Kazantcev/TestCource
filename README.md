@@ -1,6 +1,6 @@
+Практическая работа 1:
 
-
-Проект: [«На страже Волшебной школы»](https://github.com/Kirill-Kazantcev/higher-web-practice-school)
+Выбранный проект: [«На страже Волшебной школы»](https://github.com/Kirill-Kazantcev/higher-web-practice-school)
 
 ### Сводка по статусам
 
